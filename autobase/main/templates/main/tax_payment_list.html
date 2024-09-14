@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tax Payments</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <h2>All Tax Payments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Request</th>
+                <th>Amount</th>
+                <th>Payment Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in tax_payments %}
+                <tr>
+                    <td>{{ payment.request.client_name }}</td>
+                    <td>{{ payment.amount }}</td>
+                    <td>{{ payment.payment_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

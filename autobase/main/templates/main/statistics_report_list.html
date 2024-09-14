@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistics Reports</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <h2>All Statistics Reports</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Request</th>
+                <th>Report Date</th>
+                <th>Report File</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+                <tr>
+                    <td>{{ report.request.client_name }}</td>
+                    <td>{{ report.report_date }}</td>
+                    <td><a href="{{ report.report_file.url }}">Download</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tax Payment Success</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <h2>Tax Payment Successfully Created!</h2>
+    <a href="{% url 'create_tax_payment' %}">Create another tax payment</a> |
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>

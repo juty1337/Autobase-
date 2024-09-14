@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <h2>Request Successfully Created!</h2>
+    <a href="{% url 'create_request' %}">Create another request</a> |
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>

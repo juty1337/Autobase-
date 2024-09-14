@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autobase</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Welcome to Autobase</h1>
+    <nav>
+        <a href="{% url 'create_request' %}">Create Request</a> |
+        <a href="{% url 'request_list' %}">View Requests</a>
+        <!-- <a href="{% url 'create_schedule' %}">Add Bus Schedule</a> -->
+    </nav>
+
+    <h2>Bus Schedules</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Bus Number</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Route</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for schedule in schedules %}
+                <tr>
+                    <td>{{ schedule.bus_number }}</td>
+                    <td>{{ schedule.departure_time }}</td>
+                    <td>{{ schedule.arrival_time }}</td>
+                    <td>{{ schedule.route }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
